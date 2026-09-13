@@ -35,10 +35,10 @@ docker compose version
 ```
 
 #### 步驟 2: 套用本專案外掛與環境
-透過本專案提供之一鍵安裝腳本將外掛與修正套用至本機 CTFd：
+先確認已將 CTFd repository clone 至本機，並傳入其目標 checkout 目錄路徑執行安裝腳本：
 ```bash
-# 在 Linux / macOS 或 WSL 環境下執行
-./install.sh
+# 在 Linux / macOS 或 WSL 環境下執行（傳入本機 CTFd 路徑，預設為 /home/ubuntu/CTFd）
+./install.sh /path/to/CTFd
 ```
 
 #### 步驟 3: 驗證服務健康度
@@ -53,7 +53,7 @@ docker compose version
 2. 觀察 `__init__.py` 中之檔案置換邏輯：
    - 二進位檔案（ELF / PE / Mach-O）特定 Offset 字串動態置換。
    - 圖片檔案 EXIF UserComment 標籤寫入專屬 Flag。
-3. 模擬不同參賽者 Session 發送下載請求，確認下載之二進位雜湊不同且包含個別 Flag。
+3. 模擬不同隊伍名稱發送下載請求，確認不同隊伍下載之二進位雜湊不同且包含個別專屬之動態 Flag（同隊成員則獲得相同可重現之題目附件）。
 
 ---
 
