@@ -12,15 +12,15 @@
 ---
 
 ## 📋 Current Active Tasks
-- 專案轉型規劃：定位為**資安讀書會輔助專案**（CTFd 作為實戰演練與評測子模組）。
-- 規劃讀書會核心結構：課程大綱（Syllabus）、每週議題導讀（Weekly Digests）、實戰任務清單（Labs & Milestones）。
+- 專案核心架構推進：已完成 `study/` 模組骨架（`README.md`, `syllabus.md`, `weeks/` 範本與 Week 01 引導）。
+- 規劃後續實戰題目充實：針對 Web、Crypto、Reverse、Pwn 擴充手把手 Lab 靶場與自動化驗證腳本。
 
 ---
 
 ## 🏗️ Architectural Context
 - **Project**: 資安讀書會輔助專案（Study Group Assistant & Security Training Platform）
 - **Core Modules**:
-  - `study/` (規劃中): 讀書會進度排程、每週主題規劃、論文/技術簡報共筆與研討導讀
+  - `study/` (已建立): 讀書會運作機制 (`README.md`)、16 週主題大綱 (`syllabus.md`)、每週導讀與 Writeup 範本 (`weeks/`)
   - `ctfd/` / `plugins/` (實戰靶場模組):
     - `plugins/dynamic_shuffle_flag/`: Python / Flask 防作弊動態 Flag 外掛（即時置換二進位執行檔、圖片 EXIF 與尾部 ZIP）
     - `challenges/reverse_graduation/`: C 語言逆向題（Zig C Compiler / macOS Universal Binary 跨架構建置）
@@ -37,3 +37,4 @@
 - 更新 `policy.yml` 允許 scope 擴充 `study`, `plan`, `ctfd`, `labs`, `challenge`, `infra`, `build`, `release`, `governance`。
 - 配置 Conventional Commits、TruffleHog 機敏金鑰防外洩與 PR-Agent 自動審查。
 - 解決 Sourcery-AI 與 LlamaPReview 提出的 7 則審查建議（補齊 issues 權限、分支名稱正規驗證、移除 unverified 過濾、限制 PR Agent 觸發範疇、鎖定第三方 Action Commit SHA、明確漏洞通報管道），PR #2 審查執行緒全數標記 Resolved 並達 100% 通過。
+- **2026-09-13 讀書會骨架完成**：完成 16 週資安主題規劃（Web、Crypto、Reverse、Pwn）與 CTFd 靶場對照矩陣，並提供 Week 01 入門實戰引導與共筆標準模板。
